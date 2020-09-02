@@ -1,0 +1,47 @@
+Public Class Form1
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnNumbers_Click(sender As Object, e As EventArgs) Handles btnNumbers.Click
+        'constant
+        Dim intLimit As Integer
+
+        'variable inside memory 
+        Dim intCount As Integer = 0 'loop counter
+        Dim intNumber As Integer = 0
+        Dim intTotal As Integer = 0
+        Dim intAverage As Integer
+        Dim strUserInput As String
+
+        strUserInput = InputBox("What is the limit for the calculated numbers?")
+
+        intLimit = CInt(strUserInput)
+        '----------------------------------------TOTAL NUMBER----------------------------
+        'get the number from input box
+        Do While intCount < intLimit
+            'get the number
+            strUserInput = InputBox("Enter the number that you wish to calculate its total")
+            intNumber = CInt(strUserInput)
+            intTotal += intNumber
+            intCount += 1
+        Loop
+
+        '------------------------------------------AVERAGE NUMBER----------------------------
+        'average
+        intAverage = intTotal / intCount
+
+        'Display
+        lblOutput.Text = intTotal.ToString()
+        lblAverage.Text = intAverage.ToString()
+
+    End Sub
+
+    Private Sub lblOutput_Click(sender As Object, e As EventArgs) Handles lblOutput.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+End Class
